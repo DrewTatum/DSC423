@@ -58,7 +58,7 @@ abc <- abc %>%
   rename(
     Games_Played = G,
     Games_Started = GS,
-    Sacks = Sk?.., 
+    Sacks = Skâ.., 
     QB_Pressures = Prss,
     Tackles = Comb,
     Missed_Tackles = MTkl,
@@ -99,7 +99,7 @@ NFLDATA2.0 <- NFLDATA2.0 %>%
   rename(
     Games_Played = G,
     Games_Started = GS,
-    Sacks = Sk?.., 
+    Sacks = Skâ.., 
     QB_Pressures = Prss,
     Tackles = Comb,
     Missed_Tackles = MTkl,
