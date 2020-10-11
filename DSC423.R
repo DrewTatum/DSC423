@@ -12,7 +12,7 @@ hist(NFL2019$Sk?.., breaks = 20, freq = FALSE)
 hist(NFLDATA$Sk?.., breaks = 20, freq = FALSE)
 boxplot(NFLDATA$Sk?..)
 
-###### Figuring out which rows to exclude, SKIP TO ROW 70 for data NOT excluding 0 sacks
+###### Figuring out which rows to exclude, SKIP TO ROW 72 for data NOT excluding 0 sacks
 NFL2019$Sk?.. == 0
 # Percent of Observations that are 0 sacks 
 ((869-404)/869) * 100
