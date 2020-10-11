@@ -1,5 +1,6 @@
 library(ggplot2)
 library(dplyr)
+library(GGally)
 # 2018 and 2019 NFL Data
 NFL2019 <- read.csv("2019_NFL.csv", header = TRUE , sep = ",")
 NFL2018 <- read.csv("2018_NFL.csv", header = TRUE , sep = ",")
