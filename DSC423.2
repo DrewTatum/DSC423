@@ -1,0 +1,23 @@
+# 2018 and 2019 NFL Data
+NFL2019 <- read.csv("2019_NFL.csv", header = TRUE , sep = ",")
+NFL2018 <- read.csv("2018_NFL.csv", header = TRUE , sep = ",")
+
+# Combining Datasets
+NFLDATA <- rbind(NFL2018,NFL2019)
+
+# Getting rid of useless variables
+ReducedNFL <- NFLDATA[,-c(1:3,5,8:19)]
+
+# Convert MTKL. b/c percent to numeric
+ReducedNFL$MTkl. <- as.numeric(sub("%","",ReducedNFL$MTkl.))/100
+
+# Games Started Percent
+ReducedNFL$PercentStarts <- (ReducedNFL$GS / ReducedNFL$G) * 100
+
+# Splitting DataSets For Greater 50% Games Started and less than 50% 
+danielle_data <- ReducedNFL[ which(ReducedNFL$PercentStarts >= 50) ,]
+mohammed_data <- ReducedNFL[ which(ReducedNFL$PercentStarts < 50) ,]
+
+# If you want to get rid of new variable created (optional)
+danielle_data <- danielle_data[1:11]
+mohammed_data <- mohammed_data[1:11]
