@@ -11,13 +11,7 @@ ReducedNFL <- NFLDATA[,-c(1:3,5,8:19)]
 # Convert MTKL. b/c percent to numeric
 ReducedNFL$MTkl. <- as.numeric(sub("%","",ReducedNFL$MTkl.))/100
 
-# Games Started Percent
-ReducedNFL$PercentStarts <- (ReducedNFL$GS / ReducedNFL$G) * 100
+# Splitting DataSets For 8 Games started and more and less than 8
+danielle_data <- ReducedNFL[ which(ReducedNFL$GS >= 8) ,]
+mohammed_data <- ReducedNFL[ which(ReducedNFL$GS < 8) ,]
 
-# Splitting DataSets For Greater 50% Games Started and less than 50% 
-danielle_data <- ReducedNFL[ which(ReducedNFL$PercentStarts >= 50) ,]
-mohammed_data <- ReducedNFL[ which(ReducedNFL$PercentStarts < 50) ,]
-
-# If you want to get rid of new variable created (optional)
-danielle_data <- danielle_data[1:11]
-mohammed_data <- mohammed_data[1:11]
