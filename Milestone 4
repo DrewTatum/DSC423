@@ -8,24 +8,25 @@ NFL2018 <- read.csv("2018_NFL.csv", header = TRUE , sep = ",")
 # Combining Datasets
 NFLDATA <- rbind(NFL2018,NFL2019)
 # Looking at right skewdness 
-hist(NFL2019$Sk?.., breaks = 20, freq = FALSE)
-hist(NFLDATA$Sk?.., breaks = 20, freq = FALSE)
+hist(NFL2019$Skâ.., breaks = 20, freq = FALSE)
+hist(NFLDATA$Skâ.., breaks = 20, freq = FALSE)
 boxplot(NFLDATA$Sk?..)
 
 ###### Figuring out which rows to exclude, SKIP TO ROW 72 for data NOT excluding 0 sacks
-NFL2019$Sk?.. == 0
+NFL2019$Skâ.. == 0
 # Percent of Observations that are 0 sacks 
 ((869-404)/869) * 100
-NFL2018$Sk?.. == 0
+NFL2018$Skâ.. == 0
+(((869+843)-(404+407))/(869+843)*100)
 
 # 2018 and 2019 NFL Data Excluding 0 sacks 
 New2019 <- read.csv("2019_NFL.csv", header = TRUE , sep = ",", nrows = 404)
 New2018 <- read.csv("2018_NFL.csv", header = TRUE , sep = ",", nrows = 407)
 
 NEWDATA <- rbind(New2018,New2019)
-hist(New2019$Sk?.. , breaks = 20 , freq = FALSE)
-hist(NEWDATA$Sk?.. , breaks = 20, freq = FALSE)
-boxplot(NEWDATA$Sk?..)
+hist(New2019$Skâ.. , breaks = 20 , freq = FALSE)
+hist(NEWDATA$Skâ.. , breaks = 20, freq = FALSE)
+boxplot(NEWDATA$Skâ..)
 
 
 # Get rid of irrelevant variables 
@@ -81,6 +82,7 @@ NFLDATA2.0$MTkl. <- as.numeric(sub("%","",NFLDATA2.0$MTkl.))/100
 # Summary stats
 summary(NFLDATA2.0)
 boxplot(NFLDATA2.0)
+median(NFLDATA2.0$Sacks)
 hist(NFLDATA2.0$Age, breaks = 20)
 hist(NFLDATA2.0$Bltz, breaks = 20)
 hist(NFLDATA2.0$Hrry, breaks = 20)
