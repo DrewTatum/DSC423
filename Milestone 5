@@ -11,6 +11,9 @@ ReducedNFL <- NFLDATA[,-c(1:3,5,8:19)]
 # Convert MTKL. b/c percent to numeric
 ReducedNFL$MTkl. <- as.numeric(sub("%","",ReducedNFL$MTkl.))/100
 
+# Getting Rid of Rows Missing Data
+ReducedNFL <- ReducedNFL[complete.cases(ReducedNFL),]
+
 # Splitting DataSets For 8 Games started and more and less than 8
 danielle_data <- ReducedNFL[ which(ReducedNFL$GS >= 8) ,]
 mohammed_data <- ReducedNFL[ which(ReducedNFL$GS < 8) ,]
